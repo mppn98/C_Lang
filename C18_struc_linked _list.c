@@ -22,7 +22,7 @@ typedef struct people{   //people안적고 person;으로가능
     float height;  //4
     float weight;  //4
 }person;
-/*
+
 typedef struct people person;  //person이라는 자료형으로 재정의
 int main(){
     struct people data;  //일반변수 data변수의 크기는 22바이트 {}안에 선언한 요소들의 크기의합
@@ -35,8 +35,8 @@ int main(){
 
     data.age=21;  //22바이트중 2바이트차지
     data.height=178.3; //4바이트
-}*/
-/* 구조체를 사용하여 사람의 신체정보입력받고출력
+}
+ 구조체를 사용하여 사람의 신체정보입력받고출력
 typedef struct people{   
     char name[12];  //이름 12바이트
     unsigned short int age;  //나이 2바이트
@@ -56,8 +56,8 @@ int main(){
     scanf("%f",&data.weight);
 
     printf("%s : %d세, %.1fcm, %.1fkg\n",data.name,data.age,data.height,data.weight);
-}*/
-/*
+}
+
 int main(){
     person freinds[3];  //person 데이터 3개를 저장할수있는 66바이트할당
     freinds[1].age=22;  //두번째 요소의 age에 22대임
@@ -69,9 +69,9 @@ int main(){
     p->age=23;   // 위에식과동일
 
     struct people data={"홍길동,51,184.2,79"};
-}*/
+}
 
-/*
+
 #define MAX_COUNT 5
 int main(){
     person friends[MAX_COUNT];
@@ -95,7 +95,7 @@ void showfriendlist(person *p_friend,int count){
         printf("%-14s, %3d, %6.2f, %6.2f\n",p_friend->name,p_friend->age,p_friend->height,p_friend->weight);
 
     }
-}*/
+}
 /* 구조체의 요소는 같은크기끼리 모아주는것이 좋다
 구조체의 크기를 구할때에는 sizeof연산자를 사용하는것이 안전
 struct test *p1 = (struct test *)malloc(16); //오류일수도
@@ -111,7 +111,7 @@ struct test *p2 = (struct test *)malloc(sizeof(struct test));
 // 포인터1 --> 숫자1ㅣ포인터2   오른쪽꺼가 노드
 // 노드:연결리스트에서 숫자와 포인터를 함께 저장하기 위해 할당한메모리
 
-/*
+
 1단계:연결리스트의 시작상태
 동적으로 할당되는 첫노드의 주소값을 저장해야 하기때문에 포인터가필요
 연결 리스트의 시작점이 되는포인터가 헤드포인터 --주의:노드아님!!
@@ -128,15 +128,15 @@ p_head->p_next =NULL; //다음노드가 없음을명시
 p_head->p_next=(NODE*)malloc(sizeof(NODE));
 p_head->p_next->number=15; 
 p_head->p_next->p_next=null;
-*/
 
-/*
+
+
 //100개가 추가되었고 101번째 노드를 추가해야한다면?
 NODE *p=p_head;
 //p_next가 null일때까지 반복 null이면 마지막노드라는뜻
 while(NULL !=p->p_next){
     p=p->p_next;  //p->p_next값을 p에 대입하면 p는 다음주소로이동
-}*/
+}
 
 typedef struct node{
     int number; //숫자를 저장할변수
