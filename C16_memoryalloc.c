@@ -22,13 +22,13 @@ c표준함수 malloc함수를 사용해서 메모리할당가능
 void *형식으로 주소를 반환 
 free함수로 할당된 메모리해제하기!
 */
-/*  
+
 int main(){
     short *p=(short*)malloc(100); //50개그룹
     int *p=(int*)malloc(100); //100바이트를 4바이트단위로쓰고싶다,25개그룹
     free(p) //p가 가지고있는 주소에 할당된 메모리를 해제
-} */
-/*
+} 
+
 void main(){
     char *p_name;
     p_name=(char*)malloc(32); //32바이트 메모리를 동적할당
@@ -41,11 +41,11 @@ void main(){
     else{
         printf("Memory allocation error!!"); //메모리 할당실패
     }
-}*/
-/*  
+}
+
 int main(){
     int *p=(int*)malloc(12); //int data[3]과같음  12바이트할당!!
     int*p=(int*)malloc(sizeof(int)*3);//4바이트크기 3개를 원하는구나
     int data_size=3;
     int*p=(int*)malloc(data_size); //메모리할당 크기를 변수로지정가능
-}*/
+}

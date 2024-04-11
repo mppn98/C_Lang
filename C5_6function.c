@@ -5,7 +5,7 @@
 #include <stdio.h> //헤더파일임 함수원형들을 특정파일에 미리선언 해두고 사용
 				   // 중괄호안에 main함수가 작업할 내용
 //반환형 함수이름 (매개변수)
-/*	
+
 int sum(int value1, int value2)
 {	int result =value1 + value2;
 	return result; //반환값
@@ -36,11 +36,11 @@ putchar(65); 아스키 값 65에 해당하는 문자 A가 출력됨
 putchar('A'); 문자 A가 출략됨
 puts : 문자열 출력 함수
 puts("HI~");  HI~ 출력후에 줄 바꿈이 일어남 */
-/*	
+
 int main() {
 	char data = 65;
 	printf("%c의 ASCII값은 %d입니다.", data, data);  //A의값은 65입니다
 	//  %뒤에 뭐가오느냐가 더 중요
 	//  %전체칸수.소수점 자릿수f
 	// %8.4f 는 8자리수 소수점이하 4자리
-}*/
+}

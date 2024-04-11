@@ -40,13 +40,13 @@ char (*p)[5]; char5개짜리니 5바이트크기의 메모리를 가리키는p
 p++ //p=p+1;과 같으므로 주소가 5가증가!
 
 */
-/*
+
 int main(){
     char data1,data2,data3,data4,data5,i;
     char *p[5]={&data1,&data2,&data3,&data4,&data5};
     for(i=0;i<5;i++)
         *p[i]=0;  //data1~data5에 모두 0이저장됨
-}*/
+}
 int main(){
     char data[3][5];
     char (*p)[5];

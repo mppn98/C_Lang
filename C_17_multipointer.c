@@ -14,7 +14,7 @@ char **p2; //2????? : p2,*p2,**p2  ??or???or?????
 #include <stdio.h>
 #include <malloc.h>
 #include <stdlib.h>
-/*
+
 short data=0;
 int my_ptr =(int)&data;
 data변수의 주소를 my__ptr에 저장하기위해 형 변환
@@ -22,8 +22,8 @@ data변수의 주소를 my__ptr에 저장하기위해 형 변환
 *my_ptr=3;  오류! 포인터변수가 아니므로 *연산자 사용불가
 2차원 포인터는 1차원 포인터의 주소값을 저장한다
 
-*/
-/*
+
+
 int main(){
     //short **pp;  //2차원 포인터변수 p를선언
     //int data=3;
@@ -33,8 +33,8 @@ int main(){
     p=&data; //data변수의 주소값이 포인터변수p에저장
     pp=&p; //1차원 포인터 p의 주소값이 2차원 포인터pp에저장
     **pp=5; //5로바뀜 데이터변수가
-}*/
-/*
+}
+
 int main(){
     short data=3;
     short *p=&data;
@@ -44,18 +44,18 @@ int main(){
     printf("use *p data : %d \n",data);
     **pp=5;
     printf("use **pp data : %d \n",data);
-}*/
+}
 //2차원 포인터가 가리키는 대상을 동적으로 할당하기
-/*  
+
 int main(){
     short **pp,data=3;
     pp=(short**)malloc(4);  //4바이트크기의 메모리를 만들고 그주소를 pp에
     //pp=(short**)malooc(sizeof(short*)); //short* 의크기는 4바이트니까
     *pp=&data; //data변수의 주소값을 두번째 상자에저장
     **pp=5; //3에서 5로변경 
-}*/
+}
 //malloc을 이용하여 2차원 포인터 구조만들기
-/*  
+
 void main(){
     short **pp;
     pp=(short**)malloc(sizeof(short*));
@@ -64,9 +64,9 @@ void main(){
     printf("**pp : %d\n",**pp);
     free(*pp);
     free(pp);
-}*/
+}
 //2차원 포인터로 8바이트동적메모리를 할당하는 함수만들기
-/*
+
 void GetMyData(int**q){  //포인터변수 q에 p변수의 주소를저장
     *q=(int*)malloc(8); 
 }   //할당된 메모리의 주소값을 포인터 q가 가리키는 p에저장
@@ -75,7 +75,7 @@ void main(){
     GetMyData(&p);  //포인터변수 p의 주소값을 매개변수로 전달
     *p=5;  //할당된 메모리의 첫4바이트에 값5를 넣음 
     free(p);  //할당된 동적 메모리를 해제
-}*/
+}
 /*여러개의 1차원포인터를 정적으로 할당하기
 short *p[100]; //short* 형식의 1차원 포인터를 100개 선언
 배열의 요소가100개 각요소의 크기는 4바이트
@@ -84,12 +84,12 @@ p[0]~p[99] 총100개의 포인터 사용가능
 메모리낭비가심함----------
 short**pp;
 pp=(short**)malloc(sizeof(short*));  */
-/*int main(){
+int main(){
 int n;
 short **pp;
 scanf("&d",&n);  //사용할 1차원 포인터의개수를 사용자에게 입력받음
 pp=(short**)malloc(sizeof(short*)*n); //short*형식의 1차원포인터 n개할당
-}*/
+}
 /*2차원 배열과 동적 메모리할당
 회사에서 직원들을 체력테스트 결과 저장하는 프로그램 만든다가정
 20대 4명  30대 2명  40대 3명
@@ -103,7 +103,7 @@ pp=(short**)malloc(sizeof(short*)*n); //short*형식의 1차원포인터 n개할당
     count[1][0]=45; //30대연령의 첫번째사람
     count[2][2]=42; //40대연령의 세번째사람
 */
-/*  
+
 int main(){
     unsigned char limit_table[3]={4,2,3};
     unsigned char count[3][4]; //연령별 윗몸일으키기 횟수를 저장할 배열
@@ -125,7 +125,7 @@ int main(){
         }
         printf("%5.2f\n",(double)sum/limit_table[age]);
     }
-}*/
+}
 /*조건추가
 1.각 연령층에 포함된 인원수가 변한다면?
 연령층의수가4명 이상이되면 count배열에 모든직원의 일으키기횟수를 저장못하는 문제발생
@@ -157,7 +157,7 @@ free(p); 1차원포인터 메모리해제
 free(p_limit_table);  연령별 인원수를 저장하기 위해 만든ㄴ 메모리를해제 
 //연령층별로 입력된 인원수만큼 동적으로 메모리할당
 */
-/*1조건
+1조건
 int main(){
     unsigned char limit_table[3],*p[3];
     int age,member,temp,sum;
@@ -185,9 +185,9 @@ int main(){
         printf("%5.2f\n",(double)sum/limit_table[age]);
         free(p[age]);  //이연령에 할당했던 동적 메모리 해제     
     }
-} */
+} 
 //-----------------최종 2차원포인터로 연령별 윗몸일으키기 횟수관리하기
-/*
+
 int main(){
     unsigned char *p_limit_table,**p;
     int age,age_step,member,temp,sum;
@@ -221,4 +221,4 @@ int main(){
     }
     free(p); //윗몸 일으키기 횟수를 저장하는 메모리를 해제함
     free(p_limit_table); //연령별 인원수 저장하는 메모리를 해제함
-}*/
+}
